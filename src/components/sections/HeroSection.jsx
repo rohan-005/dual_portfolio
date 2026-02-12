@@ -1,44 +1,48 @@
 /* eslint-disable no-unused-vars */
 // src/components/sections/HeroSection.jsx
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
+  const timeoutRef = useRef(null);
+
   useEffect(() => {
-    let timeout;
-    const typeRole = () => {
-      const role = hero.typingRoles[currentRoleIndex];
-      let charIndex = 0;
+    const role = hero.typingRoles[currentRoleIndex];
+    let charIndex = 0;
 
-      const type = () => {
-        if (charIndex <= role.length) {
-          setDisplayText(role.substring(0, charIndex));
-          charIndex++;
-          timeout = setTimeout(type, 80);
-        } else {
-          setIsTyping(false);
-          timeout = setTimeout(() => {
-            setIsTyping(true);
-            setCurrentRoleIndex(
-              (prev) => (prev + 1) % hero.typingRoles.length
-            );
-          }, 2000);
-        }
-      };
+    setDisplayText("");
+    setIsTyping(true);
 
-      type();
-      return () => clearTimeout(timeout);
+    const type = () => {
+      if (charIndex <= role.length) {
+        setDisplayText(role.slice(0, charIndex));
+        charIndex++;
+        timeoutRef.current = setTimeout(type, 80);
+      } else {
+        setIsTyping(false);
+
+        timeoutRef.current = setTimeout(() => {
+          setCurrentRoleIndex(
+            (prev) => (prev + 1) % hero.typingRoles.length
+          );
+        }, 1800);
+      }
     };
 
-    typeRole();
+    type();
+
+    return () => {
+      clearTimeout(timeoutRef.current);
+    };
   }, [currentRoleIndex, hero.typingRoles]);
 
   return (
     <section className="min-h-screen flex items-center justify-center relative py-24 overflow-hidden">
+
       {/* Soft background blobs */}
       <motion.div
         className={`absolute top-20 right-10 w-72 h-72 bg-${accentColors.primary}/10 rounded-full blur-3xl`}
@@ -52,9 +56,7 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
         transition={{ duration: 14, repeat: Infinity }}
       />
 
-      {/* -------------------------------
-         Decorative retro frame boxes
-      -------------------------------- */}
+      {/* Decorative frames */}
       <div
         className={`absolute inset-16 border border-dashed rounded-xl pointer-events-none opacity-20 border-${accentColors.primary}`}
       />
@@ -63,10 +65,8 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
       />
 
       {/* -------------------------------
-          Doodles (corner decorations)
+         Main doodle
       -------------------------------- */}
-
-      {/* Main doodle */}
       <motion.div
         className="absolute top-24 right-24 opacity-30 dark:opacity-40"
         animate={{ rotate: [0, 3, -3, 0] }}
@@ -90,67 +90,22 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
                 strokeWidth="2"
                 fill="none"
               />
-              <circle
-                cx="35"
-                cy="50"
-                r="5"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <circle
-                cx="65"
-                cy="50"
-                r="5"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <line
-                x1="45"
-                y1="50"
-                x2="55"
-                y2="50"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
-              <line
-                x1="50"
-                y1="45"
-                x2="50"
-                y2="55"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
+              <circle cx="35" cy="50" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+              <circle cx="65" cy="50" r="5" stroke="currentColor" strokeWidth="2" fill="none" />
+              <line x1="45" y1="50" x2="55" y2="50" stroke="currentColor" strokeWidth="2" />
+              <line x1="50" y1="45" x2="50" y2="55" stroke="currentColor" strokeWidth="2" />
             </>
           ) : (
             <>
-              <path
-                d="M30,40 L15,50 L30,60"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <path
-                d="M70,40 L85,50 L70,60"
-                stroke="currentColor"
-                strokeWidth="2"
-                fill="none"
-              />
-              <line
-                x1="45"
-                y1="30"
-                x2="55"
-                y2="70"
-                stroke="currentColor"
-                strokeWidth="2"
-              />
+              <path d="M30,40 L15,50 L30,60" stroke="currentColor" strokeWidth="2" fill="none" />
+              <path d="M70,40 L85,50 L70,60" stroke="currentColor" strokeWidth="2" fill="none" />
+              <line x1="45" y1="30" x2="55" y2="70" stroke="currentColor" strokeWidth="2" />
             </>
           )}
         </svg>
       </motion.div>
 
-      {/* Small chip / tech doodle */}
+      {/* Small chip doodle */}
       <div className="absolute bottom-40 right-32 opacity-20">
         <svg
           width="90"
@@ -158,52 +113,15 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
           viewBox="0 0 100 100"
           className={`text-${accentColors.secondary}`}
         >
-          <rect
-            x="28"
-            y="28"
-            width="44"
-            height="44"
-            rx="6"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-          />
-          <line
-            x1="50"
-            y1="10"
-            x2="50"
-            y2="28"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <line
-            x1="50"
-            y1="72"
-            x2="50"
-            y2="90"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <line
-            x1="10"
-            y1="50"
-            x2="28"
-            y2="50"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
-          <line
-            x1="72"
-            y1="50"
-            x2="90"
-            y2="50"
-            stroke="currentColor"
-            strokeWidth="2"
-          />
+          <rect x="28" y="28" width="44" height="44" rx="6" stroke="currentColor" strokeWidth="2" fill="none" />
+          <line x1="50" y1="10" x2="50" y2="28" stroke="currentColor" strokeWidth="2" />
+          <line x1="50" y1="72" x2="50" y2="90" stroke="currentColor" strokeWidth="2" />
+          <line x1="10" y1="50" x2="28" y2="50" stroke="currentColor" strokeWidth="2" />
+          <line x1="72" y1="50" x2="90" y2="50" stroke="currentColor" strokeWidth="2" />
         </svg>
       </div>
 
-      {/* Left spark doodle */}
+      {/* Spark doodle */}
       <div className="absolute top-32 left-24 opacity-20">
         <svg
           width="70"
@@ -221,26 +139,70 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
       </div>
 
       {/* -------------------------------
-            Content container
+          Frosthowl doodle (NEW)
+          icy wolf / legendary weapon vibe
+      -------------------------------- */}
+      <motion.div
+        className="absolute bottom-28 left-32 opacity-25 dark:opacity-35"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        <svg
+          width="120"
+          height="120"
+          viewBox="0 0 100 100"
+          className={`text-${accentColors.secondary}`}
+        >
+          {/* wolf head */}
+          <path
+            d="M25 60
+               L20 40
+               L35 30
+               L45 40
+               L55 40
+               L65 30
+               L80 40
+               L75 60
+               L60 70
+               L50 65
+               L40 70 Z"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinejoin="round"
+          />
+
+          {/* eyes */}
+          <line x1="42" y1="50" x2="46" y2="50" stroke="currentColor" strokeWidth="2" />
+          <line x1="54" y1="50" x2="58" y2="50" stroke="currentColor" strokeWidth="2" />
+
+          {/* icy rune / hammer handle */}
+          <line x1="50" y1="70" x2="50" y2="90" stroke="currentColor" strokeWidth="2" />
+          <rect
+            x="44"
+            y="88"
+            width="12"
+            height="6"
+            rx="1"
+            stroke="currentColor"
+            strokeWidth="2"
+            fill="none"
+          />
+        </svg>
+      </motion.div>
+
+      {/* -------------------------------
+            Content
       -------------------------------- */}
       <div className="text-center max-w-4xl mx-auto px-6 relative z-10">
-        {/* Retro content frame */}
         <div
           className={`relative border rounded-xl p-10 md:p-14 border-${accentColors.primary}/30 bg-white/5 backdrop-blur-sm`}
         >
-          {/* Corner marks */}
-          <span
-            className={`absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-${accentColors.primary}`}
-          />
-          <span
-            className={`absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-${accentColors.primary}`}
-          />
-          <span
-            className={`absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-${accentColors.primary}`}
-          />
-          <span
-            className={`absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-${accentColors.primary}`}
-          />
+          {/* corner marks */}
+          <span className={`absolute -top-2 -left-2 w-4 h-4 border-l-2 border-t-2 border-${accentColors.primary}`} />
+          <span className={`absolute -top-2 -right-2 w-4 h-4 border-r-2 border-t-2 border-${accentColors.primary}`} />
+          <span className={`absolute -bottom-2 -left-2 w-4 h-4 border-l-2 border-b-2 border-${accentColors.primary}`} />
+          <span className={`absolute -bottom-2 -right-2 w-4 h-4 border-r-2 border-b-2 border-${accentColors.primary}`} />
 
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: -30 }}
@@ -305,12 +267,9 @@ const HeroSection = ({ hero, name, retroEffects, accentColors, isGameDev }) => {
           </motion.p>
         </div>
 
-        {/* -------------------------------
-              Scroll indicator
-              (moved lower)
-        -------------------------------- */}
+        {/* scroll indicator */}
         <motion.div
-          className="absolute -bottom-20 left-1/2 transform -translate-x-1/2"
+          className="absolute -bottom-60 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
