@@ -1,0 +1,249 @@
+
+{
+  "person": {
+    "name": "Rohan Dhanerwal",
+    "tagline": "Building immersive worlds and robust applications",
+    "location": "India",
+    "email": "rohan.dhanerwal@example.com",
+    "social": {
+      "github": "https://github.com/rohandhanerwal",
+      "linkedin": "https://linkedin.com/in/rohandhanerwal",
+      "twitter": "https://twitter.com/rohandhanerwal",
+      "website": "https://rohandhanerwal.dev"
+    }
+  },
+  "theme": {
+    "accent": "royal-blue",
+    "allowRetroEffects": true
+  },
+  "profiles": {
+    "gameDeveloper": {
+      "id": "game",
+      "label": "Game Developer",
+      "hero": {
+        "title": "Crafting Interactive Stories",
+        "subtitle": "Unity Developer | Game Designer | Interactive Narratives",
+        "typingRoles": ["Unity Developer", "Game Designer", "Interactive Storyteller", "3D Generalist"]
+      },
+      "about": "I'm a final-year Computer Science student passionate about creating immersive gaming experiences. My focus is on story-driven adventure games and innovative gameplay mechanics. I specialize in Unity development, creating everything from 2D puzzle adventures to 3D multiplayer experiences. I believe games are the perfect medium for interactive storytelling and unique player experiences.",
+      "experience": [
+        {
+          "company": "Indie Game Studio",
+          "role": "Game Development Intern",
+          "period": "Jun 2024 - Present",
+          "description": [
+            "Developed a lens-to-the-past mechanic for a mystery adventure game using Unity and C#",
+            "Implemented mini-game hub system with 5+ unique gameplay scenarios",
+            "Optimized render pipelines for WebGL builds achieving 60fps on mid-range devices"
+          ],
+          "tech": ["Unity", "C#", "WebGL", "Shader Graph"]
+        }
+      ],
+      "projects": [
+        {
+          "id": "lens-to-past",
+          "title": "Lens of Memories",
+          "shortDescription": "Mystery adventure game with time-shifting mechanics",
+          "longDescription": "A first-person mystery adventure where players use a magical lens to view the past and solve puzzles. Features non-linear storytelling and environmental puzzles.",
+          "tech": ["Unity", "C#", "Shader Graph", "Cinema Machine"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/lens-of-memories",
+            "live": "https://rohandhanerwal.itch.io/lens-of-memories",
+            "video": "https://youtube.com/watch?v=lens-of-memories"
+          },
+          "files": {
+            "build": "/builds/lens-of-memories.zip",
+            "repoPath": "/games/lens-of-memories"
+          }
+        },
+        {
+          "id": "multiplayer-webgl",
+          "title": "Neo Arena",
+          "shortDescription": "Real-time multiplayer WebGL game",
+          "longDescription": "Competitive multiplayer arena game built with Unity WebGL. Features real-time synchronization, multiple game modes, and customizable avatars.",
+          "tech": ["Unity", "Photon", "WebGL", "C#"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/neo-arena",
+            "live": "https://rohandhanerwal.itch.io/neo-arena",
+            "video": "https://youtube.com/watch?v=neo-arena"
+          },
+          "files": {
+            "build": "/builds/neo-arena.zip",
+            "repoPath": "/games/neo-arena"
+          }
+        },
+        {
+          "id": "mini-game-hub",
+          "title": "Arcade Station",
+          "shortDescription": "Collection of 5 mini-games in one hub",
+          "longDescription": "A central hub world connecting 5 distinct mini-games including puzzle, platformer, and racing genres. Each game shares a unified art style and progression system.",
+          "tech": ["Unity", "C#", "2D Toolkit", "UI Toolkit"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1551103782-8ab07afd45c1?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/arcade-station",
+            "live": "https://rohandhanerwal.itch.io/arcade-station",
+            "video": "https://youtube.com/watch?v=arcade-station"
+          },
+          "files": {
+            "build": "/builds/arcade-station.zip",
+            "repoPath": "/games/arcade-station"
+          }
+        }
+      ],
+      "skills": {
+        "core": ["Game Design", "Level Design", "Gameplay Programming", "UI/UX for Games"],
+        "tools": ["Unity", "C#", "Visual Studio", "Blender", "Aseprite"],
+        "engines": ["Unity 3D", "Unity 2D", "WebGL"]
+      },
+      "cvFile": "/cv/rohan-dhanerwal-game-dev.pdf"
+    },
+    "fullStackDeveloper": {
+      "id": "fullstack",
+      "label": "Full-Stack Developer",
+      "hero": {
+        "title": "Building Scalable Solutions",
+        "subtitle": "MERN Stack | PHP | System Design",
+        "typingRoles": ["React Developer", "Node.js Engineer", "System Architect", "Database Designer"]
+      },
+      "about": "I'm a final-year Computer Science student passionate about full-stack development. I specialize in building responsive web applications with modern technologies. From authentication systems to complex learning platforms, I enjoy creating solutions that make a difference. Experienced in both JavaScript and PHP ecosystems.",
+      "experience": [
+        {
+          "company": "TechSolutions Inc.",
+          "role": "Full-Stack Developer Intern",
+          "period": "Jan 2024 - May 2024",
+          "description": [
+            "Built RESTful APIs using Node.js and Express serving 1000+ daily requests",
+            "Developed responsive frontend components with React and Tailwind CSS",
+            "Implemented JWT authentication and role-based access control"
+          ],
+          "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind"]
+        }
+      ],
+      "projects": [
+        {
+          "id": "dsaforge",
+          "title": "DSAForge",
+          "shortDescription": "Interactive DSA learning platform",
+          "longDescription": "Comprehensive platform for learning Data Structures and Algorithms with interactive visualizations, code playground, and progress tracking.",
+          "tech": ["React", "TypeScript", "Node.js", "MongoDB", "Tailwind"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/dsaforge",
+            "live": "https://dsaforge.dev",
+            "video": "https://youtube.com/watch?v=dsaforge"
+          },
+          "files": {
+            "apiRepo": "https://github.com/rohandhanerwal/dsaforge-api",
+            "frontendRepo": "https://github.com/rohandhanerwal/dsaforge-frontend",
+            "deploymentUrl": "https://dsaforge.dev"
+          }
+        },
+        {
+          "id": "dsaforge-lms",
+          "title": "DSAForge LMS",
+          "shortDescription": "Learning management system for coding courses",
+          "longDescription": "Complete LMS platform with course creation, student enrollment, quizzes, and progress tracking. Features interactive code editor and automated assessment.",
+          "tech": ["React", "Node.js", "Express", "MySQL", "Redis"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/dsaforge-lms",
+            "live": "https://lms.dsaforge.dev",
+            "video": "https://youtube.com/watch?v=dsaforge-lms"
+          },
+          "files": {
+            "apiRepo": "https://github.com/rohandhanerwal/dsaforge-lms-api",
+            "frontendRepo": "https://github.com/rohandhanerwal/dsaforge-lms-frontend",
+            "deploymentUrl": "https://lms.dsaforge.dev"
+          }
+        },
+        {
+          "id": "auction-platform",
+          "title": "Online Auction Platform",
+          "shortDescription": "Real-time bidding system",
+          "longDescription": "Full-featured auction platform with real-time bidding, automatic outbid notifications, and seller dashboards.",
+          "tech": ["PHP", "Laravel", "MySQL", "WebSockets", "Tailwind"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1556155092-490a1ba16284?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/auction-platform",
+            "live": "https://auction.rohandhanerwal.dev",
+            "video": "https://youtube.com/watch?v=auction-platform"
+          },
+          "files": {
+            "apiRepo": "https://github.com/rohandhanerwal/auction-api",
+            "frontendRepo": "https://github.com/rohandhanerwal/auction-frontend",
+            "deploymentUrl": "https://auction.rohandhanerwal.dev"
+          }
+        },
+        {
+          "id": "complaint-system",
+          "title": "Complaint Management System",
+          "shortDescription": "Citizen complaint resolution platform",
+          "longDescription": "Digital platform for filing and tracking public complaints with automated routing to relevant departments and real-time status updates.",
+          "tech": ["PHP", "MySQL", "Bootstrap", "jQuery"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/complaint-system",
+            "live": "https://complaints.rohandhanerwal.dev",
+            "video": "https://youtube.com/watch?v=complaint-system"
+          },
+          "files": {
+            "apiRepo": "https://github.com/rohandhanerwal/complaint-api",
+            "frontendRepo": "https://github.com/rohandhanerwal/complaint-frontend",
+            "deploymentUrl": "https://complaints.rohandhanerwal.dev"
+          }
+        },
+        {
+          "id": "neoexam",
+          "title": "NeoExam",
+          "shortDescription": "Online examination platform",
+          "longDescription": "Secure online examination system with anti-cheating measures, automated grading, and detailed analytics.",
+          "tech": ["React", "Node.js", "MongoDB", "Socket.io"],
+          "media": {
+                "cover": "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800",
+            "gallery": []
+          },
+          "links": {
+            "github": "https://github.com/rohandhanerwal/neoexam",
+            "live": "https://neoexam.dev",
+            "video": "https://youtube.com/watch?v=neoexam"
+          },
+          "files": {
+            "apiRepo": "https://github.com/rohandhanerwal/neoexam-api",
+            "frontendRepo": "https://github.com/rohandhanerwal/neoexam-frontend",
+            "deploymentUrl": "https://neoexam.dev"
+          }
+        }
+      ],
+      "skills": {
+        "frontend": ["React", "TypeScript", "Tailwind CSS", "Redux"],
+        "backend": ["Node.js", "Express", "PHP", "Laravel", "REST APIs"],
+        "databases": ["MongoDB", "MySQL", "PostgreSQL", "Redis"],
+        "devops": ["Git", "Docker", "AWS", "Vercel", "Netlify"]
+      },
+      "cvFile": "/cv/rohan-dhanerwal-fullstack.pdf"
+    }
+  }
+}
