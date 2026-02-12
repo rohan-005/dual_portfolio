@@ -84,7 +84,7 @@ function App() {
       
       <div className={`min-h-screen ${theme} transition-colors duration-300 overflow-hidden`}>
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        {/* <RetroOverlayLayer enabled={portfolioData.theme.allowRetroEffects} /> */}
+        <RetroOverlayLayer enabled={portfolioData.theme.allowRetroEffects} />
         
         <AnimatePresence mode="wait">
           {!selectedProfile ? (
